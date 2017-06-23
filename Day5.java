@@ -35,7 +35,6 @@ Sample Output
 2 x 10 = 20
  */
 
-
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -44,31 +43,15 @@ import java.util.regex.*;
 
 public class Solution {
 
-
-    public static String composite(String s){
-        String done = "";
-        char[] word = s.toCharArray();
-        for(int i = 0; i < s.length(); i+= 2){
-            done += word[i];
-        }
-        done += " ";
-        for(int i = 1; i < s.length(); i+= 2){
-            done += word[i];
-        }
-        return done;
-    }
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        in.nextLine();
-        for(int i = 1; i < n; i++){
-            while(in.hasNext()){
-                String first_word = in.nextLine();
-                String second_word = in.nextLine();
-                System.out.println(composite(first_word));
-                System.out.println(composite(second_word));
+        if(n >= 2 && n <= 20){
+            for(int i = 1; i <= 10; i++){
+                if(n >= 2 && n <= 20){
+                    System.out.println(n + " x " + i + " = " + (n*i));
+                }
             }
         }
-   }
-}
+    }
+  }

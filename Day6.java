@@ -58,6 +58,8 @@ We then print a single line of space-separated strings; the
 first string contains the ordered characters from 's even indices 
 (), and the second string contains the ordered characters from 's odd indices ().
  */
+
+
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -65,31 +67,32 @@ import java.math.*;
 import java.util.regex.*;
 
 public class Solution {
-    
-    public static String composite(String s , int num){
+
+
+    public static String composite(String s){
         String done = "";
         char[] word = s.toCharArray();
-        for(int i = 0; i < s.length(); i+= num)
+        for(int i = 0; i < s.length(); i+= 2){
             done += word[i];
+        }
         done += " ";
-        for(int i = 1; i < s.length(); i+= num)
+        for(int i = 1; i < s.length(); i+= 2){
             done += word[i];
+        }
         return done;
     }
-        
-    
-    
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int num = scan.nextInt();
-        scan.nextLine();
-        String first_word = scan.nextLine();
-        String second_word = scan.nextLine();
-        String composite_1 = composite(first_word , num);
-        String composite_2 = composite(second_word, num);
-        
-        System.out.println(composite_1);
-        System.out.println(composite_2);
-    }
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        in.nextLine();
+        for(int i = 1; i < n; i++){
+            while(in.hasNext()){
+                String first_word = in.nextLine();
+                String second_word = in.nextLine();
+                System.out.println(composite(first_word));
+                System.out.println(composite(second_word));
+            }
+        }
+   }
 }

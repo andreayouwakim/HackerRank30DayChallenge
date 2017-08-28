@@ -106,5 +106,4 @@ class Solution {
         sc.close();
     }
 }
-public class Day15 {
-}
+

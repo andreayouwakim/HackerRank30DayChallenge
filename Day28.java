@@ -58,7 +58,7 @@ public class Solution {
         int N = in.nextInt();
         String email = ".+@gmail\\.com$";
         Pattern pattern = Pattern.compile(email);
-        ArrayList<String> list = new ArrayList<>()''
+        ArrayList<String> list = new ArrayList<>();
         for(int i = 0; i < N; i++){
             String first_name = in.next();
             String emailID = in.next();
